@@ -21,6 +21,13 @@ module.exports = {
         }
       }
     }
+  },
+  chainWebpack: (config) => {
+    config.module
+        .rule('babel-loader')
+        .test(/.js$/)
+        .use('babel-loader')
+        .loader('babel-loader')
+        .end()
   }
-
 }
